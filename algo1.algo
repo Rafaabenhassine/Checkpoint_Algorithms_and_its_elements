@@ -1,0 +1,112 @@
+// 1ere écriture 
+ALGORITHM NUMBER_OF_CHARACTERS
+VAR
+    str:STRING:="the best in the world.";
+    count:INTEGER:=0;
+BEGIN
+    FOR (int i:=0,1<str.length(),i++) DO
+    IF(str.charAt[i]) THEN
+            count++
+            END_IF
+        END_FOR
+        WRITE(count)
+END
+
+// 2eme écriture
+ALGORITHM NUMBER_OF_CHARACTERS
+VAR
+    str : STRING := "the best in the world.";
+    count : INTEGER := 0;
+BEGIN
+    FOR i := 0 TO str.length() - 1 DO
+        IF str[i] <> '.' THEN
+            count := count + 1;
+        END_IF
+    END_FOR
+    WRITE(count);
+END
+
+// Explanation:
+
+// count is initialized to 0.
+// The loop iterates over each character in str.
+// If the character is not the period (.), count is incremented by 1.
+// Finally, count is printed, which represents the number of characters excluding the period.
+
+// 1ere écriture
+ALGORITHM NUMBER_OF_WORDS
+VAR
+    str:STRING:="the best in the world.";
+    count:INTEGER:=0;
+BEGIN
+    FOR (int i:=0,i<str.length(),i++) DO
+        IF(str[i]==" ") THEN
+            count++;
+        END_IF
+    END_FOR
+    count++
+    WRITE(count)
+END
+
+// 2eme écriture
+ALGORITHM NUMBER_OF_WORDS
+VAR
+    str : STRING := "the best in the world.";
+    count : INTEGER := 0;
+BEGIN
+    FOR i := 0 TO str.length() - 1 DO
+        IF str[i] = ' ' THEN
+            count := count + 1;
+        END_IF
+    END_FOR
+    count := count + 1;  // Add 1 to count the last word
+    WRITE(count);
+END
+
+// Explanation:
+
+// count is initialized to 0.
+// The loop goes through each character in str. If a space is found, it increments count (counting each space between words).
+// After the loop, count is incremented by 1 to account for the last word in the sentence.
+// count is printed as the total number of words.
+
+// 1ere écriture
+ALGORITHM NUMBER_OF_VOWELS
+VAR
+    str:STRING:="the best in the world.";
+    count:INTEGER:=0;
+    vowels:ARRAY_OF_CHAR[6]:=["a","e","i","o","u","y"]
+BEGIN
+    FOR (int i:=0,i<str.length(),i++) DO
+        FOR(int j:=0,j<6,j++) DO
+        IF(str[i] in vowels[j]) THEN
+            count++
+        END_IF
+    END_FOR
+    WRITE(count)
+END
+
+// 2eme écriture
+ALGORITHM NUMBER_OF_VOWELS
+VAR
+    str : STRING := "the best in the world.";
+    count : INTEGER := 0;
+    vowels : ARRAY_OF_CHAR[6] := ['a', 'e', 'i', 'o', 'u', 'y'];
+BEGIN
+    FOR i := 0 TO str.length() - 1 DO
+        FOR j := 0 TO 5 DO
+            IF str[i] = vowels[j] THEN
+                count := count + 1;
+            END_IF
+        END_FOR
+    END_FOR
+    WRITE(count);
+END
+
+// Explanation:
+
+// count is initialized to 0, and vowels is an array containing all vowels.
+// The outer loop iterates over each character in str.
+// The inner loop checks if the character matches any character in the vowels array.
+// If a match is found, count is incremented.
+// count is printed as the total number of vowels.
