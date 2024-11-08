@@ -1,112 +1,113 @@
-// 1st method 
-ALGORITHM NUMBER_OF_CHARACTERS
+// 1ère méthode
+ALGORITHME NOMBRE_DE_CARACTÈRES
 VAR
-    str:STRING:="the best in the world.";
-    count:INTEGER:=0;
-BEGIN
-    FOR (int i:=0,1<str.length(),i++) DO
-    IF(str.charAt[i]) THEN
-            count++
-            END_IF
-        END_FOR
-        WRITE(count)
-END
+    str : CHAÎNE := "le meilleur du monde.";   // La chaîne de caractères à analyser
+    count : ENTIER := 0;                       // Compteur initialisé à 0 pour compter les caractères
+DEBUT
+    POUR (int i := 0, 1 < str.longueur(), i++) FAIRE
+        SI (str.charAt[i]) ALORS               // Vérifie chaque caractère
+            count++                            // Incrémente le compteur si un caractère est trouvé
+        FIN_SI
+    FIN_POUR
+    ÉCRIRE(count)                              // Affiche le nombre total de caractères
+FIN
 
-// 2nd method
-ALGORITHM NUMBER_OF_CHARACTERS
+// 2ème méthode
+ALGORITHME NOMBRE_DE_CARACTÈRES
 VAR
-    str : STRING := "the best in the world.";
-    count : INTEGER := 0;
-BEGIN
-    FOR i := 0 TO str.length() - 1 DO
-        IF str[i] <> '.' THEN
-            count := count + 1;
-        END_IF
-    END_FOR
-    WRITE(count);
-END
+    str : CHAÎNE := "le meilleur du monde.";   // La chaîne de caractères à analyser
+    count : ENTIER := 0;                       // Compteur initialisé à 0
+DEBUT
+    POUR i := 0 À str.longueur() - 1 FAIRE
+        SI str[i] <> '.' ALORS                 // Si le caractère n'est pas un point
+            count := count + 1;                // Incrémente le compteur
+        FIN_SI
+    FIN_POUR
+    ÉCRIRE(count);                             // Affiche le nombre total de caractères sans le point
+FIN
 
-// Explanation:
+// Explication :
 
-// count is initialized to 0.
-// The loop iterates over each character in str.
-// If the character is not the period (.), count is incremented by 1.
-// Finally, count is printed, which represents the number of characters excluding the period.
+// Le compteur `count` est initialisé à 0.
+// La boucle passe en revue chaque caractère dans `str`.
+// Si le caractère n'est pas un point (.), le compteur est incrémenté de 1.
+// Enfin, `count` est imprimé, ce qui représente le nombre de caractères, point exclu.
 
-// 1st method 
-ALGORITHM NUMBER_OF_WORDS
+// 1ère méthode
+ALGORITHME NOMBRE_DE_MOTS
 VAR
-    str:STRING:="the best in the world.";
-    count:INTEGER:=0;
-BEGIN
-    FOR (int i:=0,i<str.length(),i++) DO
-        IF(str[i]==" ") THEN
-            count++;
-        END_IF
-    END_FOR
-    count++
-    WRITE(count)
-END
+    str : CHAÎNE := "le meilleur du monde.";   // La chaîne de caractères à analyser
+    count : ENTIER := 0;                       // Compteur initialisé à 0 pour compter les mots
+DEBUT
+    POUR (int i := 0, i < str.longueur(), i++) FAIRE
+        SI (str[i] = " ") ALORS                // Si un espace est trouvé, cela marque un mot
+            count++;                           // Incrémente le compteur de mots
+        FIN_SI
+    FIN_POUR
+    count++                                    // Incrémente pour le dernier mot
+    ÉCRIRE(count)                              // Affiche le nombre total de mots
+FIN
 
-// 2nd method
-ALGORITHM NUMBER_OF_WORDS
+// 2ème méthode
+ALGORITHME NOMBRE_DE_MOTS
 VAR
-    str : STRING := "the best in the world.";
-    count : INTEGER := 0;
-BEGIN
-    FOR i := 0 TO str.length() - 1 DO
-        IF str[i] = ' ' THEN
-            count := count + 1;
-        END_IF
-    END_FOR
-    count := count + 1;  // Add 1 to count the last word
-    WRITE(count);
-END
+    str : CHAÎNE := "le meilleur du monde.";   // La chaîne de caractères à analyser
+    count : ENTIER := 0;                       // Compteur initialisé à 0
+DEBUT
+    POUR i := 0 À str.longueur() - 1 FAIRE
+        SI str[i] = ' ' ALORS                  // Si un espace est trouvé, cela marque un mot
+            count := count + 1;                // Incrémente le compteur de mots
+        FIN_SI
+    FIN_POUR
+    count := count + 1;                        // Ajoute 1 pour compter le dernier mot
+    ÉCRIRE(count);                             // Affiche le nombre total de mots
+FIN
 
-// Explanation:
+// Explication :
 
-// count is initialized to 0.
-// The loop goes through each character in str. If a space is found, it increments count (counting each space between words).
-// After the loop, count is incremented by 1 to account for the last word in the sentence.
-// count is printed as the total number of words.
+// Le compteur `count` est initialisé à 0.
+// La boucle parcourt chaque caractère de `str`. Si un espace est trouvé, `count` est incrémenté, indiquant un mot trouvé.
+// Après la boucle, `count` est incrémenté de 1 pour compter le dernier mot de la phrase.
+// `count` est imprimé comme le nombre total de mots.
 
-// 1st method 
-ALGORITHM NUMBER_OF_VOWELS
+// 1ère méthode
+ALGORITHME NOMBRE_DE_VOYELLES
 VAR
-    str:STRING:="the best in the world.";
-    count:INTEGER:=0;
-    vowels:ARRAY_OF_CHAR[6]:=["a","e","i","o","u","y"]
-BEGIN
-    FOR (int i:=0,i<str.length(),i++) DO
-        FOR(int j:=0,j<6,j++) DO
-        IF(str[i] in vowels[j]) THEN
-            count++
-        END_IF
-    END_FOR
-    WRITE(count)
-END
+    str : CHAÎNE := "le meilleur du monde.";   // La chaîne de caractères à analyser
+    count : ENTIER := 0;                       // Compteur initialisé à 0 pour compter les voyelles
+    voyelles : TABLEAU_DE_CHAÎNES[6] := ["a", "e", "i", "o", "u", "y"]; // Liste des voyelles
+DEBUT
+    POUR (int i := 0, i < str.longueur(), i++) FAIRE
+        POUR (int j := 0, j < 6, j++) FAIRE    // Boucle pour comparer chaque voyelle
+            SI (str[i] est dans voyelles[j]) ALORS
+                count++                        // Incrémente le compteur si une voyelle est trouvée
+            FIN_SI
+        FIN_POUR
+    FIN_POUR
+    ÉCRIRE(count)                              // Affiche le nombre total de voyelles
+FIN
 
-// 2nd method
-ALGORITHM NUMBER_OF_VOWELS
+// 2ème méthode
+ALGORITHME NOMBRE_DE_VOYELLES
 VAR
-    str : STRING := "the best in the world.";
-    count : INTEGER := 0;
-    vowels : ARRAY_OF_CHAR[6] := ['a', 'e', 'i', 'o', 'u', 'y'];
-BEGIN
-    FOR i := 0 TO str.length() - 1 DO
-        FOR j := 0 TO 5 DO
-            IF str[i] = vowels[j] THEN
-                count := count + 1;
-            END_IF
-        END_FOR
-    END_FOR
-    WRITE(count);
-END
+    str : CHAÎNE := "le meilleur du monde.";   // La chaîne de caractères à analyser
+    count : ENTIER := 0;                       // Compteur initialisé à 0
+    voyelles : TABLEAU_DE_CHAÎNES[6] := ['a', 'e', 'i', 'o', 'u', 'y']; // Liste des voyelles
+DEBUT
+    POUR i := 0 À str.longueur() - 1 FAIRE
+        POUR j := 0 À 5 FAIRE                  // Boucle pour comparer chaque voyelle
+            SI str[i] = voyelles[j] ALORS
+                count := count + 1;            // Incrémente le compteur si une voyelle est trouvée
+            FIN_SI
+        FIN_POUR
+    FIN_POUR
+    ÉCRIRE(count);                             // Affiche le nombre total de voyelles
+FIN
 
-// Explanation:
+// Explication :
 
-// count is initialized to 0, and vowels is an array containing all vowels.
-// The outer loop iterates over each character in str.
-// The inner loop checks if the character matches any character in the vowels array.
-// If a match is found, count is incremented.
-// count is printed as the total number of vowels.
+// Le compteur `count` est initialisé à 0, et `voyelles` contient toutes les voyelles possibles.
+// La boucle externe passe chaque caractère de `str`.
+// La boucle interne vérifie si le caractère correspond à l'une des voyelles dans le tableau `voyelles`.
+// Si une correspondance est trouvée, `count` est incrémenté.
+// `count` est imprimé comme le nombre total de voyelles.
