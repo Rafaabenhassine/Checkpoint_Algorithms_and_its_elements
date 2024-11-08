@@ -1,4 +1,4 @@
-// 1ere écriture 
+// 1st method 
 ALGORITHM NUMBER_OF_CHARACTERS
 VAR
     str:STRING:="the best in the world.";
@@ -12,7 +12,7 @@ BEGIN
         WRITE(count)
 END
 
-// 2eme écriture
+// 2nd method
 ALGORITHM NUMBER_OF_CHARACTERS
 VAR
     str : STRING := "the best in the world.";
@@ -33,7 +33,7 @@ END
 // If the character is not the period (.), count is incremented by 1.
 // Finally, count is printed, which represents the number of characters excluding the period.
 
-// 1ere écriture
+// 1st method 
 ALGORITHM NUMBER_OF_WORDS
 VAR
     str:STRING:="the best in the world.";
@@ -48,7 +48,7 @@ BEGIN
     WRITE(count)
 END
 
-// 2eme écriture
+// 2nd method
 ALGORITHM NUMBER_OF_WORDS
 VAR
     str : STRING := "the best in the world.";
@@ -70,7 +70,7 @@ END
 // After the loop, count is incremented by 1 to account for the last word in the sentence.
 // count is printed as the total number of words.
 
-// 1ere écriture
+// 1st method 
 ALGORITHM NUMBER_OF_VOWELS
 VAR
     str:STRING:="the best in the world.";
@@ -86,7 +86,7 @@ BEGIN
     WRITE(count)
 END
 
-// 2eme écriture
+// 2nd method
 ALGORITHM NUMBER_OF_VOWELS
 VAR
     str : STRING := "the best in the world.";
